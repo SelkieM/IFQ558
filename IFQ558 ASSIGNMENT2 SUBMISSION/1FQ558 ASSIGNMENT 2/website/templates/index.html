@@ -1,0 +1,67 @@
+{% extends "layout.html" %} {% block content %}
+
+<!-------Main introduction content----------------->
+
+<div class="container">
+  <!-- FLASH messages if any -->
+  {% with messages = get_flashed_messages() %} {% if messages %} {% for message
+  in messages %}
+  <div id="flash-message" class="alert alert-info" role="alert">
+    {{ message }}
+  </div>
+  {% endfor %}
+  <br />
+  {% endif %} {% endwith %}
+
+  <h2>GREAT BOOKS AT GREAT PRICES</h2>
+
+  <br />
+  <br />
+
+  <div class="gallery-wrap">
+    <div class="item item-1"></div>
+    <div class="item item-2"></div>
+    <div class="item item-3"></div>
+    <div class="item item-4"></div>
+    <div class="item item-5"></div>
+  </div>
+</div>
+
+<!-----alert------------------------------------>
+
+<div class="alert alert-primary" role="alert">
+  50% OFF SALE STARTING JULY 1ST!
+</div>
+<br />
+<br />
+{% endblock content %}
+
+<!---foooter-------------------------------->
+
+{% block footer %}
+<div class="copyright-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-6 col-lg-6 text-center text-lg-left">
+        <div class="copyright-text">
+          <p>
+            My Book Store | Brisbane, Queensland | Copyright &copy; 2023 |
+            Selkie Mackay | selkie.mackay@connect.qut.edu.au
+          </p>
+        </div>
+      </div>
+      <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
+        <div class="footer-menu">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Policy</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock footer %}

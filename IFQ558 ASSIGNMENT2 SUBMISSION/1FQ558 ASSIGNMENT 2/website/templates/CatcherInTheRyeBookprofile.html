@@ -1,0 +1,117 @@
+{% extends "layout.html" %}
+
+{% block title %}
+<h1>The Online Book Store</h1>
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!----Navigation bar and header CSS------------------------->
+
+   
+
+    <!----Navigation bar and header HTML-------------------->
+    <ul class="nav">
+        <li id="settings">
+            <a href="index.html"><img src="https://cdn-icons-png.flaticon.com/512/4/4259.png" width="120%"
+                    height="120%" /></a>
+        </li>
+        <li>
+            <a href="index.html">HOME</a>
+        </li>
+        <li>
+            <a href="shopping cart 2.html">SHOPPING CART</a>
+        </li>
+        <li id="search">
+            <form action="" method="get">
+                <input type="text" name="search_text" id="search_text" placeholder="Search" />
+                <input type="button" name="search_button" id="search_button"></a>
+            </form>
+        </li>
+        <li id="options">
+            <a href="#">BOOK CATEGORIES</a>
+            <ul class="subnav">
+                <li><a href="ALLBOOK2.html">ALL BOOKS</a></li>
+                <li><a href="FICTIONBOOK2.html">FICTION</a></li>
+                <li><a href="nonfictionbook2.html">NON FICTION</a></li>
+            </ul>
+        </li>
+    </ul>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+{% endblock title%}
+    <!-------Body ccs----------->
+
+   {% block content %}
+
+        <main class="container">
+
+            <!-- Left Image -->
+            <div class="left-column">
+                <img data-image="book5" class="active"
+                    src="https://i.pinimg.com/736x/da/4e/e0/da4ee06aace8e748487b995175311658.jpg" alt="Book5">
+            </div>
+
+
+            <!-- Right Column -->
+            <div class="right-column">
+                <!-- Product Description -->
+                <div class="product-description">
+                    <span>Fiction</span>
+                    <br>
+                    <h1>Catcher in the rye</h1>
+                    <br>
+                    <h2> J.D Salinger</h2>
+                    <br>
+                    <p>The novel details two days in the life of 16-year-old Holden Caulfield after he has been expelled
+                        from prep school. Confused and disillusioned, Holden searches for truth and rails against the
+                        “phoniness” of the adult world. He ends up exhausted and emotionally unstable. The events are
+                        related after the fact.</p>
+                </div>
+
+                <!-- Product Configuration -->
+                <div class="product-configuration">
+
+                    <!-- Product Pricing -->
+                    <div class="product-price">
+                        <span>$ 19.95</span>
+                        <a href="#" class="cart-btn">Add to cart</a>
+                    </div>
+                </div>
+                {% endblock content %}
+
+      {% block footer %}
+
+        
+
+        <footer class="footer-section">
+            <div class="copyright-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 text-center text-lg-left">
+                            <div class="copyright-text">
+                                <p>My Book Store| Brisbane, Queensland | Copyright &copy; 2023 | Selkie Mackay |
+                                    selkie.mackay@connect.qut.edu.au</p>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
+                            <div class="footer-menu">
+                                <ul>
+                                    <li><a href="#">Home</a></li>
+                                    <li><a href="#">Terms</a></li>
+                                    <li><a href="#">Privacy</a></li>
+                                    <li><a href="#">Policy</a></li>
+                                    <li><a href="#">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+     {% endblock footer %}

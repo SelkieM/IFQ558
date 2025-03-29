@@ -1,0 +1,58 @@
+{% extends 'layout.html' %}{% block content %}
+
+<!-- Display WTForm for order form -->
+<!-- form using bootstrap -->
+<div class="container">
+  <!-- FLASH messages if any -->
+  {% with messages = get_flashed_messages() %} {% if messages %} {% for message
+  in messages %}
+  <div id="flash-message" class="alert alert-info" role="alert">
+    {{ message }}
+  </div>
+  {% endfor %}
+  <br />
+  {% endif %} {% endwith %}
+
+  <h1>Confirm Order</h1>
+  <h3>Order Details</h3>
+  <!-- display order details -->
+  <!-- total price -->
+  <p>Order Total: ${{total_cost}}</p>
+  <p>Order Items:</p>
+  <!-- list of book names from books array -->
+  <ul>
+    {% for book in books %}
+    <li>{{book.quantity}} x {{book.name}}</li>
+    {% endfor %}
+  </ul>
+  <br />
+  <br />
+  <h3>Your Details</h3>
+
+  <!-- order form -->
+  <form method="POST">
+    <div>
+      {{ form.first_name.label(class='form-label') }} {{
+      form.first_name(class='form-control', value=user.first_name) }}
+    </div>
+    <div>
+      {{ form.last_name.label(class='form-label') }} {{
+      form.last_name(class='form-control', value=user.last_name) }}
+    </div>
+    <div>
+      {{ form.email.label(class='form-label') }} {{
+      form.email(class='form-control', value=user.email) }}
+    </div>
+    <div>
+      {{ form.phone.label(class='form-label') }} {{
+      form.phone(class='form-control') }}
+    </div>
+    <div>
+      {{ form.address.label(class='form-label') }} {{
+      form.address(class='form-control') }}
+    </div>
+    <br />
+    {{ form.submit(class='btn btn-primary', style='width: 100%;') }}
+  </form>
+</div>
+{% endblock content %}

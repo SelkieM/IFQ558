@@ -1,0 +1,18 @@
+{% extends 'layout.html' %} {% block content %}
+
+<!-- DISPLAY ORDER CONFIRMATION MESSAGE -->
+<div class="container">
+  <h1>Order Confirmed!</h1>
+  <p>Thank you for your order!</p>
+  <p>Your order number is: {{order.id}}</p>
+  <p>Order Total: ${{total_cost}}</p>
+  <br />
+  <br />
+  <h3>Your Details</h3>
+  <p>First Name: {{order.first_name}}</p>
+  <p>Last Name: {{order.last_name}}</p>
+  <p>Email: {{order.email}}</p>
+  <p>Phone: {{order.phone}}</p>
+  <p>Address: {{order.address}}</p>
+</div>
+{% endblock content %}

@@ -1,0 +1,59 @@
+{% extends "layout.html" %} {% block title %}
+<title>Shopping Cart</title>
+{% endblock title %} {% block content %}
+
+<div class="container">
+  <h1>Shopping Cart</h1>
+  <br />
+  {% if books %}
+  <!-- show all books in cart -->
+  <!-- table with image, book name and price -->
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Book</th>
+        <th scope="col">Price</th>
+        <th scope="col">Quantity</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for book in books %}
+      <tr>
+        <td>
+          <img src="{{book.image}}" class="cardimage" style="width: 75px;"/>
+        </td>
+        <td>{{book.name}}</td>
+        <td>${{book.price}}</td>
+        <td>{{book.quantity}}</td>
+        <!-- increase, decrease, remove from cart button -->
+        <td>
+          <!-- goes to /increase_quantity route and passes in book id of clicked book -->
+          <a class="btn btn-primary" href="/increase_quantity?book_id={{ book.id }}"
+            ><i class="bi bi-plus"></i></a
+          >
+          <a class="btn btn-primary" href="/decrease_quantity?book_id={{ book.id }}"
+            ><i class="bi bi-dash"></i></a
+          >
+          <a class="btn btn-danger" href="/remove_from_cart?book_id={{ book.id }}"
+            ><i class="bi bi-trash"></i></a
+          >
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+    <!-- Display Order Total and Confirm Button -->
+    <br />
+    <h4>Your Total: ${{total_price}}</h4>
+    <br>
+    <!-- confirm order button -->
+    <a style="width: 100%;" class="btn btn-primary" href="/confirm_order">Confirm Order</a>
+    <br /><br />
+
+    {% else %}
+    <p>Your cart is empty.</p>
+    {% endif %}
+  </div>
+  {% endblock content %}
+</div>

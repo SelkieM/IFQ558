@@ -1,0 +1,40 @@
+{% extends "layout.html" %} {% block content %}
+
+<div class="container">
+  <!-- FLASH messages if any -->
+  {% with messages = get_flashed_messages() %} {% if messages %}
+  <br />
+  {% for message in messages %}
+  <div id="flash-message" class="alert alert-info" role="alert">
+    {{ message }}
+  </div>
+  {% endfor %}
+  <br />
+  {% endif %} {% endwith %}
+
+  <h1>Log In To Complete Order</h1>
+  <br />
+  <!-- sign up instead -->
+  <p>
+    Don't have an account?
+    <a href="/sign-up" style="color: blue; text-decoration: underline"
+      >Sign up</a
+    >
+  </p>
+  <br />
+  <!-- log in form -->
+  <form method="POST">
+    <div>
+      {{ form.email.label(class='form-label') }} {{
+      form.email(class='form-control') }}
+    </div>
+    <div>
+      {{form.password.label(class='form-label') }} {{
+      form.password(class='form-control') }}
+    </div>
+    <br />
+    {{ form.submit(class='btn btn-primary', style='width:100%') }}
+  </form>
+</div>
+
+{% endblock content %}

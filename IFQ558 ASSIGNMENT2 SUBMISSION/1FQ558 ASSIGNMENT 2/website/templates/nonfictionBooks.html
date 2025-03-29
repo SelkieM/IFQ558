@@ -1,0 +1,32 @@
+{% extends "layout.html" %} {% block content %}
+
+<!-- display all books in 'books' variable as bootstrap cards -->
+<!-- each book contains name price image -->
+<div class="container">
+  <h1>Non-Fiction Books</h1>
+  <br />
+  <div class="row">
+    {% for book in books %}
+    <div class="card">
+      <img src="{{book.image}}" class="cardimage" />
+      <p>{{book.name}}</p>
+      <p>${{book.price}}</p>
+      <!-- view book details button -->
+      <a class="btn btn-primary" href="/bookDetails?book_id={{ book.id }}"
+        >View Details</a
+      >
+      <!-- add to card button -->
+      <a class="btn btn-success" href="/addtocart?book_id={{ book.id }}"
+        >Add To Cart</a
+      >
+    </div>
+    {% endfor %}
+  </div>
+  <br />
+  <!-- button to add new book -->
+  <a class="btn btn-primary" href="/add_book" style="width: 100%"
+    >Add New Book</a
+  >
+</div>
+
+{% endblock content %}

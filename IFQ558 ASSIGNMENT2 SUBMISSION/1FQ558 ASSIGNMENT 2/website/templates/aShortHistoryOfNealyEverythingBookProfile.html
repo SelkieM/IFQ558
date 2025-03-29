@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+
+{% block title %}
+<h1>The Online Book Store</h1>
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+   
+    <!----Navigation bar and header HTML-------------------->
+    <ul class="nav">
+        <li id="settings">
+            <a href="index.html"><img src="https://cdn-icons-png.flaticon.com/512/4/4259.png" width="120%"
+                    height="120%" /></a>
+        </li>
+        <li>
+            <a href="index.html">HOME</a>
+        </li>
+        <li>
+            <a href="shopping cart 2.html">SHOPPING CART</a>
+        </li>
+        <li id="search">
+            <form action="" method="get">
+                <input type="text" name="search_text" id="search_text" placeholder="Search" />
+                <input type="button" name="search_button" id="search_button"></a>
+            </form>
+        </li>
+        <li id="options">
+            <a href="#">BOOK CATEGORIES</a>
+            <ul class="subnav">
+                <li><a href="ALLBOOK2.html">ALL BOOKS</a></li>
+                <li><a href="FICTIONBOOK2.html">FICTION</a></li>
+                <li><a href="nonfictionbook2.html">NON FICTION</a></li>
+            </ul>
+        </li>
+    </ul>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    {% endblock title %}
+    {% block content %}
+
+
+        <main class="container">
+
+            <!-- Left Image -->
+            <div class="left-column">
+                <img data-image="red" class="active"
+                    src="https://www.thereallygoodbookshop.com.au/assets/images/product/0552997048_1" alt="Book2">
+            </div>
+
+
+            <!-- Right Column -->
+            <div class="right-column">
+                <!-- Product Description -->
+                <div class="product-description">
+                    <span>Non fiction</span>
+                    <br>
+                    <h1>A short hisory of neary everything</h1>
+                    <br>
+                    <h2> Bill Bryson</h2>
+                    <br>
+                    <p>A Short History Of Nearly Everything explains everything we've learned about our world and the
+                        universe so far.
+                        It covers how they formed, how we learned to make sense of time, space and gravity, why it's
+                        such a miracle that we're alive and how much of our planet is still a complete mystery to us.
+                    </p>
+                </div>
+
+                <!-- Product Configuration -->
+                <div class="product-configuration">
+
+                    <!-- Product Pricing -->
+                    <div class="product-price">
+                        <span>$ 15.50</span>
+                        <a href="#" class="cart-btn">Add to cart</a>
+                    </div>
+                </div>
+                {% endblock content %}
+
+                {% block footer %}
+
+        <footer class="footer-section">
+            <div class="copyright-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 text-center text-lg-left">
+                            <div class="copyright-text">
+                                <p>My Book Store| Brisbane, Queensland | Copyright &copy; 2023 | Selkie Mackay |
+                                    selkie.mackay@connect.qut.edu.au</p>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
+                            <div class="footer-menu">
+                                <ul>
+                                    <li><a href="#">Home</a></li>
+                                    <li><a href="#">Terms</a></li>
+                                    <li><a href="#">Privacy</a></li>
+                                    <li><a href="#">Policy</a></li>
+                                    <li><a href="#">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endblock footer %}

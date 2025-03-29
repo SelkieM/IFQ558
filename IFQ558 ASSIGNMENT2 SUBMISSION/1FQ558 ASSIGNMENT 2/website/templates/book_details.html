@@ -1,0 +1,42 @@
+{% extends "layout.html" %} {% block content %}
+
+<!-- using bootstrap display book details in the page including: name, price description, image and category -->
+<div class="container">
+  <h1>{{book.name}}</h1>
+  <!-- Left Image -->
+  <div class="left-column">
+    <img
+      data-image="red"
+      class="active"
+      src="{{book.image}}"
+      width="20%"
+      height="50%"
+      alt="Book-Image"
+    />
+  </div>
+  <!-- Right Column -->
+  <div class="right-column">
+    <!-- Product Description -->
+    <div class="product-description">
+      <br />
+      <p><strong>Category: </strong>{{book.category.title()}}</p>
+      <!-- Product Pricing -->
+      <div class="product-price">
+        <p><strong>Price: </strong>${{book.price}}</p>
+      </div>
+      <p><strong>Description: </strong>{{book.description}}</p>
+    </div>
+    <br /><br />
+    <!-- Product Configuration -->
+    <div class="product-configuration">
+      <a
+        class="btn btn-success"
+        href="/addtocart?book_id={{ book.id }}"
+        style="width: 100%"
+        >Add To Cart</a
+      >
+    </div>
+    <br />
+  </div>
+</div>
+{% endblock content %}
